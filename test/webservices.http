@@ -27,7 +27,7 @@ POST http://localhost:7071/api/calculator
 Content-Type: application/json
 
 {
-  "a": 15,
-  "b": 3,
+  "a": 0,
+  "b": 0,
   "operation": "divide"
 }
