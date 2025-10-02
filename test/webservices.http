@@ -6,4 +6,16 @@ Get https://cloudfunction-fmfwhcdqdffafaca.francecentral-01.azurewebsites.net/ap
 
 ###
 
-GET http://localhost:7071/api/calculator/4/5
+GET http://localhost:7071/api/calculator/4/5/add
+
+###
+
+GET http://localhost:7071/api/calculator/4/5/subtract
+
+###
+
+GET http://localhost:7071/api/calculator/4/5/multiply
+
+###
+
+GET http://localhost:7071/api/calculator/4/4/divide
