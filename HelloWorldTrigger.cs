@@ -15,9 +15,9 @@ public class HelloWorldTrigger
     }
 
     [Function("HelloWorldTrigger")]
-    public IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequest req)
+    public IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "helloworld")] HttpRequest req)
     {
         _logger.LogInformation("C# HTTP trigger function processed a request.");
-        return new OkObjectResult("Welcome to Azure Functions!");
+        return new OkObjectResult("Welcome to the world!");
     }
 }
