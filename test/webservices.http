@@ -1,1 +1,9 @@
 Get https://cloudfunction-fmfwhcdqdffafaca.francecentral-01.azurewebsites.net/api/HelloWorld
+
+###
+
+Get https://cloudfunction-fmfwhcdqdffafaca.francecentral-01.azurewebsites.net/api/calculator/5/10
+
+###
+
+GET http://localhost:7071/api/calculator/4/5
