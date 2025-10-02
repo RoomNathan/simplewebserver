@@ -1,3 +1,4 @@
+
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
@@ -45,6 +46,11 @@ public class calculatortrigger
         {
             return new BadRequestObjectResult("Invalid operation. Supported operations are: add, subtract, multiply, divide.");
         }
-        return new OkObjectResult($"The result of {operation}ing {a} and {b} is {result}");
+        CalculationResults calculationResults = new CalculationResults
+        {
+            Result = result,
+            Operation = operation
+        };
+        return new OkObjectResult(calculationResults);
     }
 }
