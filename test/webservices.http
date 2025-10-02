@@ -19,3 +19,15 @@ GET http://localhost:7071/api/calculator/4/5/multiply
 ###
 
 GET http://localhost:7071/api/calculator/4/4/divide
+
+###
+
+
+POST http://localhost:7071/api/calculator
+Content-Type: application/json
+
+{
+  "a": 15,
+  "b": 3,
+  "operation": "divide"
+}
