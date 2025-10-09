@@ -38,3 +38,22 @@ get http://localhost:7071/api/GetTransactions
 ###
 
 get https://cloudfunction-fmfwhcdqdffafaca.francecentral-01.azurewebsites.net/api/GetTransactions
+
+###
+
+get http://localhost:7071/api/coffeesNames
+
+###
+
+
+###
+
+post http://localhost:7071/api/insertTransaction
+Content-Type: application/json
+
+{
+  "CashType": "Cash",
+  "Card": "1234-5678-9012-3456",
+  "Money": 2.5,
+  "CoffeeName": "Espresso"
+}
