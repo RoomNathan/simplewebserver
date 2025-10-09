@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
@@ -15,10 +16,10 @@ public class GetTransactions
     }
 
     [Function("GetTransactions")]
-    public IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequest req)
+    public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequest req)
     {
         TransactionRepository repository = new TransactionRepository();
-        var transactions = repository.GetAllTransactionsAsync().Result;
+        var transactions = await repository.GetAllTransactionsAsync();
         return new OkObjectResult(transactions);
     }
 }

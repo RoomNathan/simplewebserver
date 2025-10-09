@@ -36,3 +36,5 @@ Content-Type: application/json
 get http://localhost:7071/api/GetTransactions
 
 ###
+
+get https://cloudfunction-fmfwhcdqdffafaca.francecentral-01.azurewebsites.net/api/GetTransactions

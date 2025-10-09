@@ -50,4 +50,29 @@ public class TransactionRepository
 
         return transactions;
     }
+
+    public async Task<List<CoffeeNameResult>> GetAllCoffeeNamesAsync()
+    {
+        var coffeeNames = new List<CoffeeNameResult>();
+
+        var connection = new SqlConnection(_connectionString);
+
+        await connection.OpenAsync();
+        var query = "SELECT DISTINCT CoffeeName FROM Transactions";
+
+        var command = new SqlCommand(query, connection);
+        var reader = await command.ExecuteReaderAsync();
+
+        while (await reader.ReadAsync())
+        {
+            var record = new CoffeeNameResult();
+            record.CoffeeName = reader["CoffeeName"] as string ?? string.Empty;
+            coffeeNames.Add(record);
+        }
+        await reader.CloseAsync();
+        await connection.CloseAsync();
+
+        return coffeeNames;
+    }
 }
+  
