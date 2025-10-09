@@ -28,6 +28,11 @@ Content-Type: application/json
 
 {
   "a": 0,
-  "b": 0,
+  "b": 2,
   "operation": "divide"
 }
+###
+
+get http://localhost:7071/api/GetTransactions
+
+###
